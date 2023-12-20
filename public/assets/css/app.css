@@ -1,0 +1,8 @@
+.custom-nav{
+    background-color: chocolate;
+    color: white;
+}
+
+#navbarText, .nav-link, .nav-item{
+    color: white;
+}
