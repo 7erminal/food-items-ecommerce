@@ -15,6 +15,7 @@ const ProductViewPage: React.FC = () => {
                     <img src="/assets/images/PHOTO-2023-11-23-12-04-55-2.jpg" width="95%"  />
                 </Col>
                 <Col className="justify-content-center px-0 mt-4" xs={12} sm={12} md={5}>
+                    <Container fluid>
                     <Row>
                         <Col><h1>Kelewele spice sauce</h1></Col>
                     </Row>
@@ -27,7 +28,7 @@ const ProductViewPage: React.FC = () => {
                     <Row className="mt-2">
                         <Col>Quantity: <input type="number" defaultValue="1" /></Col>
                     </Row>
-                    <Row className="mt-2">
+                    <Row className="mt-3">
                         <Col><Button variant="secondary">Add To Bag</Button></Col>
                     </Row>
                     <Row className="mt-4">
@@ -42,6 +43,7 @@ const ProductViewPage: React.FC = () => {
                     <Row className="mt-4">
                         <Col><small><b>Share this product with your friends</b></small></Col>
                     </Row>
+                    </Container>
                 </Col>
             </Row>
         </Container>

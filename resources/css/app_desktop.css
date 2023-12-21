@@ -17,15 +17,6 @@
         position: relative;
         color: white;
     }
-
-    .header-content{
-        text-align: center;
-        justify-content: center;
-        align-items: center;
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-    }
     
     .product-header-div{
         width: 100%;
@@ -33,6 +24,12 @@
         height: 650px;
         position: relative;
         color: white;
+    }
+
+    .product-header-content{
+        height: 100%;
+        text-align: center;
+        padding: 80px;
     }
     
     .video-div{
@@ -165,7 +162,7 @@
         width: 100%;
         background-color: #FFC300;
         color: #7B241C;
-        /* height: 120vh; */
+        height: 120vh;
     }
     
     .marquee-tag{
@@ -251,8 +248,7 @@
     }
 
     .cat-text{
-        font-size: 46px;
-        color: #FFC300;
+        font-size: 86px;
     }
     
     .cat-text-f{

@@ -11,11 +11,13 @@
 
      <!-- Bootstrap CSS-->
      <link href="{{ asset('bootstrap-5.0.2-dist/css/bootstrap.min.css') }}" rel="stylesheet" media="all">
-     <link href="{{ asset('assets/css/app_desktop.css') }}" rel="stylesheet" media="all">
+     <!-- <link href="{{ asset('assets/css/app_desktop.css') }}" rel="stylesheet" media="all">
      <link href="{{ asset('assets/css/app_mobile.css') }}" rel="stylesheet" media="all">
-     <link href="{{ asset('assets/css/app_tablet.css') }}" rel="stylesheet" media="all">
+     <link href="{{ asset('assets/css/app_tablet.css') }}" rel="stylesheet" media="all"> -->
 
     @viteReactRefresh
     @vite('resources/js/app.jsx')
-    @vite('resources/css/app.css')
+    @vite('resources/css/app_desktop.css')
+    @vite('resources/css/app_mobile.css')
+    @vite('resources/css/app_tablet.css')
 </head>
