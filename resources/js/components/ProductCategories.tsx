@@ -4,18 +4,21 @@ import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 import AdItem from "./AdItem";
 import ProductCategoryItem from "./ProductCategoryItem";
+import { useWindowSize } from "@uidotdev/usehooks";
 
 const ProductCategories: React.FC = () => {
+    const size = useWindowSize();
+
     return <section className="product-categories-section">
         <Container fluid>
             <Row className="product-category-nav">
                 <Navbar data-bs-theme="light">
                     <Container>
-                    <Navbar.Brand href="#home"><h3>Filter By</h3></Navbar.Brand>
+                    <Navbar.Brand href="#home"><h3 className="cat-text-f">Filter By</h3></Navbar.Brand>
                     <Nav className="mx-auto">
-                        <Nav.Link className="mx-2" href="#home" style={{ borderBottom: '5px solid chocolate' }}><h4>Condiment Type</h4></Nav.Link>
-                        <Nav.Link className="mx-2" href="#features"><h4>Better For You</h4></Nav.Link>
-                        <Nav.Link className="mx-2" href="#pricing"><h4>Occassion</h4></Nav.Link>
+                        <Nav.Link className="mx-2" href="#home" style={{ borderBottom: '5px solid chocolate' }}><span className="cat-text">Condiment Type</span></Nav.Link>
+                        <Nav.Link className="mx-2" href="#features"><span className="cat-text">Better For You</span></Nav.Link>
+                        <Nav.Link className="mx-2" href="#pricing"><span className="cat-text">Occassion</span></Nav.Link>
                     </Nav>
                     </Container>
                 </Navbar>
@@ -28,8 +31,9 @@ const ProductCategories: React.FC = () => {
                                 options={ {
                                     rewind: true,
                                     gap   : '1rem',
-                                    perPage: 7,
-                                    type: 'loop'
+                                    perPage: size.width! < 481 ? 3 : 7,
+                                    type: 'loop',
+                                    autoplay: true
                                 } }
                                 aria-label="My Favorite Images"
                                 >

@@ -5,7 +5,7 @@ const Banner1Section: React.FC = () => {
     return <section className="bannerSection1">
         <Container fluid>
             <Row className="no-gutters">
-                <Col className="px-0">
+                <Col className="px-0 d-md-block d-sm-none">
                     <img src="/assets/images/PHOTO-2023-11-23-12-05-59-2.jpg" width='100%' />
                 </Col>
                 <Col>

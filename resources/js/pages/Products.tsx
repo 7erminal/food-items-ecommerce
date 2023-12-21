@@ -18,29 +18,29 @@ const ProductsPage: React.FC = () => {
         <ProductCategories />
         <Container className="products-i">
             {/* <img src="/assets/images/PHOTO-2023-11-23-12-04-56.jpg" /> */}
-            <Row className="no-gutters">
-                <Col className="justify-content-center px-0 mt-4" xs={6} sm={6} md={3}>
+            <Row className="no-gutters justify-content-center">
+                <Col className="justify-content-center d-flex px-0 mt-4" xs={6} sm={6} md={3}>
                     <Item imageUrl="/assets/images/PHOTO-2023-11-23-12-04-55-2.jpg" />
                 </Col>
-                <Col className="justify-content-center px-0 mt-4" xs={6} sm={6} md={3}>
+                <Col className="justify-content-center d-flex px-0 mt-4" xs={6} sm={6} md={3}>
                     <Item imageUrl="/assets/images/PHOTO-2023-11-23-12-04-55-3.jpg" />
                 </Col>
-                <Col className="justify-content-center px-0 mt-4" xs={6} sm={6} md={3}>
+                <Col className="justify-content-center d-flex px-0 mt-4" xs={6} sm={6} md={3}>
                     <Item imageUrl="/assets/images/PHOTO-2023-11-23-12-04-55-4.jpg" />
                 </Col>
-                <Col className="justify-content-center px-0 mt-4" xs={6} sm={6} md={3}>
+                <Col className="justify-content-center d-flex px-0 mt-4" xs={6} sm={6} md={3}>
                     <Item imageUrl="/assets/images/PHOTO-2023-11-23-12-04-562.jpg"/>
                 </Col>
-                <Col className="justify-content-center px-0 mt-4" xs={6} sm={6} md={3}>
+                <Col className="justify-content-center d-flex px-0 mt-4" xs={6} sm={6} md={3}>
                     <Item imageUrl="/assets/images/PHOTO-2023-11-23-12-04-57.jpg" />
                 </Col>
-                <Col className="justify-content-center px-0 mt-4" xs={6} sm={6} md={3}>
+                <Col className="justify-content-center d-flex px-0 mt-4" xs={6} sm={6} md={3}>
                     <Item imageUrl="/assets/images/PHOTO-2023-11-23-12-04-574.jpg" />
                 </Col>
-                <Col className="justify-content-center px-0 mt-4" xs={6} sm={6} md={3}>
+                <Col className="justify-content-center d-flex px-0 mt-4" xs={6} sm={6} md={3}>
                     <Item imageUrl="/assets/images/PHOTO-2023-11-23-12-04-56.jpg" />
                 </Col>
-                <Col className="justify-content-center px-0 mt-4" xs={6} sm={6} md={3}>
+                <Col className="justify-content-center d-flex px-0 mt-4" xs={6} sm={6} md={3}>
                     <Item imageUrl="/assets/images/PHOTO-2023-11-23-12-04-572.jpg" />
                 </Col>
             </Row>

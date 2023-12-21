@@ -1,47 +1,47 @@
 import React from "react";
 import { createRoot } from 'react-dom/client'
-import Header from "../components/Header";
-import ItemsAd from "../components/ItemsAd";
-import NewsletterSignUp from "../components/NewsletterSignUp";
-import Banner1Section from "../components/Banner1Section";
-import Banner2Section from "../components/Banner2Section";
-import Social from "../components/Social";
 import Footer from "../components/footer";
-import ProductHeader from "../components/ProductHeader";
-import ProductCategories from "../components/ProductCategories";
-import { Col, Container, Row } from "react-bootstrap";
-import Item from "../components/Item";
+import { Button, Col, Container, Row } from "react-bootstrap";
 
 const ProductViewPage: React.FC = () => {
     return <div className="products-section">
-        <ProductHeader />
-        <ProductCategories />
-        <Container className="products-i">
+        <Container className="item-details-i">
             {/* <img src="/assets/images/PHOTO-2023-11-23-12-04-56.jpg" /> */}
-            <Row className="no-gutters">
-                <Col className="justify-content-center px-0 mt-4" xs={6} sm={6} md={3}>
-                    <Item imageUrl="/assets/images/PHOTO-2023-11-23-12-04-55-2.jpg" />
+            <Row className="item-details-header">
+                <Col className="mx-auto" style={{ textAlign: 'center' }}><h4>Kori</h4></Col>
+            </Row>
+            <Row>
+                <Col className="justify-content-center mt-4" xs={12} sm={12} md={7}>
+                    <img src="/assets/images/PHOTO-2023-11-23-12-04-55-2.jpg" width="95%"  />
                 </Col>
-                <Col className="justify-content-center px-0 mt-4" xs={6} sm={6} md={3}>
-                    <Item imageUrl="/assets/images/PHOTO-2023-11-23-12-04-55-3.jpg" />
-                </Col>
-                <Col className="justify-content-center px-0 mt-4" xs={6} sm={6} md={3}>
-                    <Item imageUrl="/assets/images/PHOTO-2023-11-23-12-04-55-4.jpg" />
-                </Col>
-                <Col className="justify-content-center px-0 mt-4" xs={6} sm={6} md={3}>
-                    <Item imageUrl="/assets/images/PHOTO-2023-11-23-12-04-562.jpg"/>
-                </Col>
-                <Col className="justify-content-center px-0 mt-4" xs={6} sm={6} md={3}>
-                    <Item imageUrl="/assets/images/PHOTO-2023-11-23-12-04-57.jpg" />
-                </Col>
-                <Col className="justify-content-center px-0 mt-4" xs={6} sm={6} md={3}>
-                    <Item imageUrl="/assets/images/PHOTO-2023-11-23-12-04-574.jpg" />
-                </Col>
-                <Col className="justify-content-center px-0 mt-4" xs={6} sm={6} md={3}>
-                    <Item imageUrl="/assets/images/PHOTO-2023-11-23-12-04-56.jpg" />
-                </Col>
-                <Col className="justify-content-center px-0 mt-4" xs={6} sm={6} md={3}>
-                    <Item imageUrl="/assets/images/PHOTO-2023-11-23-12-04-572.jpg" />
+                <Col className="justify-content-center px-0 mt-4" xs={12} sm={12} md={5}>
+                    <Row>
+                        <Col><h1>Kelewele spice sauce</h1></Col>
+                    </Row>
+                    <Row className="mt-2">
+                        <Col><h2>₵60.00</h2></Col>
+                    </Row>
+                    <Row className="mt-2">
+                        <Col>In stock</Col>
+                    </Row>
+                    <Row className="mt-2">
+                        <Col>Quantity: <input type="number" defaultValue="1" /></Col>
+                    </Row>
+                    <Row className="mt-2">
+                        <Col><Button variant="secondary">Add To Bag</Button></Col>
+                    </Row>
+                    <Row className="mt-4">
+                        <Col><h3>Product Details</h3></Col>
+                    </Row>
+                    <Row className="mt-1">
+                        <Col>Weight: 0.25 kg</Col>
+                    </Row>
+                    <Row className="mt-2">
+                        <Col><small>Get the flavour full of Chinese taste in your sauces, Friedrice, fried noodles, stir fry, sautee with the Chinese five spice mix. Made from roasted organic spices</small></Col>
+                    </Row>
+                    <Row className="mt-4">
+                        <Col><small><b>Share this product with your friends</b></small></Col>
+                    </Row>
                 </Col>
             </Row>
         </Container>

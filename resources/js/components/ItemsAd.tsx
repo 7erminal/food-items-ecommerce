@@ -2,9 +2,12 @@ import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
+import { useWindowSize } from "@uidotdev/usehooks";
 import AdItem from "./AdItem";
 
 const ItemsAd: React.FC = () => {
+    const size = useWindowSize();
+
     return <section className="itemsAdSection">
         <Container fluid>
             <Row>
@@ -20,8 +23,9 @@ const ItemsAd: React.FC = () => {
                                 options={ {
                                     rewind: true,
                                     gap   : '1rem',
-                                    perPage: 4,
-                                    type: 'loop'
+                                    perPage: size.width! < 481 ? 1 : 4,
+                                    type: 'loop',
+                                    autoplay: true
                                 } }
                                 aria-label="My Favorite Images"
                                 >

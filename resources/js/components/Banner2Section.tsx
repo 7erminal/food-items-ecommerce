@@ -18,12 +18,14 @@ const Banner2Section: React.FC = () => {
                         <Row className="align-items-center" style={{height: '100%', textAlign: 'center'}}>
                             <Col>
                                 <Row>
+                                    <Col>
                                     <b><h1 className="large-title-text">
                                         Great for the planet. <br/>Great for business.
                                     </h1></b>
+                                    </Col>
                                 </Row>
                                 <Row className="mt-4">
-                                    From how we grow our plants to the materials that make up our packs, we’re stepping up with sustainability. Get ready, come 2050 - we will be carbon neutral.
+                                    <Col>From how we grow our plants to the materials that make up our packs, we’re stepping up with sustainability. Get ready, come 2050 - we will be carbon neutral.</Col>
                                 </Row>
                             </Col>
                         </Row>
@@ -37,12 +39,12 @@ const Banner2Section: React.FC = () => {
                                             <h1>CAN</h1>
                                         </div>
                                     </Col>
-                                    <Col xs={0} sm={0} md={4}>
+                                    <Col xs={0} sm={0} md={4} className="d-md-block d-none">
                                         <img src="/assets/images/koriGingerGarlicPaste.jpeg" width="100%" />
                                     </Col>
                                 </Row>
                                 <Row className="mt-2">
-                                    <Col xs={0} sm={0} md={4}>
+                                    <Col xs={0} sm={0} md={4} className="d-md-block d-none">
                                         <img src="/assets/images/koriKelewele.jpeg" width="100%" />
                                     </Col>
                                     <Col xs={12} sm={12} md={8}>

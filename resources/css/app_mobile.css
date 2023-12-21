@@ -3,6 +3,11 @@ body, html{
     overflow-x: hidden;
 }
 
+.custom-nav{
+    background-color: chocolate;
+    color: white;
+}
+
 .header-div{
     width: 100vw;
     background-color: chocolate;
@@ -14,7 +19,7 @@ body, html{
 .product-header-div{
     width: 100%;
     background-color: chocolate;
-    height: 650px;
+    height: 750px;
     position: relative;
     color: white;
 }
@@ -54,21 +59,21 @@ body, html{
 
 .header-title-text{
     color: white;
-    font-size: 6rem;
+    font-size: 3.5rem;
     font-family: sans-serif;
     line-height: 1;
 }
 
 .header-title-text-2{
     color: white;
-    font-size: 4rem;
+    font-size: 3rem;
     font-family: sans-serif;
     line-height: 1;
 }
 
 .header-body-text{
     color: wheat;
-    font-size: 1.25rem;
+    font-size: 1.05rem;
     line-height: 1.5;
 }
 
@@ -126,7 +131,7 @@ body, html{
 .newsletter-section{
     position: relative;
     width: 100%;
-    margin-top: 200px;
+    margin-top: 80px;
     margin-bottom: 50px;
 }
 
@@ -149,7 +154,7 @@ body, html{
     width: 100%;
     background-color: #FFC300;
     color: #7B241C;
-    height: 120vh;
+    /* height: 120vh; */
 }
 
 .marquee-tag{
@@ -234,10 +239,18 @@ body, html{
     padding-bottom: 80px;
 }
 
+.cat-text{
+    font-size: 22px;
+}
+
+.cat-text-f{
+    font-size: 24px;
+}
+
 .item{
     box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
     position: relative;
-    width: 90.2%;
+    width: 97.2%;
     border-radius: 6px;
     transition: all .2s;
     overflow: hidden;
@@ -275,4 +288,14 @@ body, html{
     padding-top: 5%;
     padding-bottom: 6%;
     position: relative;
+}
+
+.item-details-i{
+    padding-top: 10px;
+    padding-bottom: 120px;
+}
+
+.item-details-header{
+    padding-top: 40px;
+    padding-bottom: 40px;
 }
