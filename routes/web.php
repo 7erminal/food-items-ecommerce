@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +23,15 @@ Route::get('/products', function () {
     return view('products');
 });
 
-Route::get('/view-product', function () {
-    return view('productView');
+Route::get('/view-product', function (Request $request) {
+    $item_id = $request->item_id;
+
+    Log::debug("Item ID is ");
+    Log::debug($item_id);
+
+    return view('productView')->with('data', $item_id);
+});
+
+Route::get('/cart', function () {
+    return view('cart');
 });

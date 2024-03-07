@@ -17,7 +17,7 @@
 
     @viteReactRefresh
     @vite('resources/js/app.jsx')
-    @vite('resources/css/app_desktop.css')
     @vite('resources/css/app_mobile.css')
     @vite('resources/css/app_tablet.css')
+    @vite('resources/css/app_desktop.css')
 </head>

@@ -286,3 +286,13 @@ body, html{
     padding-top: 40px;
     padding-bottom: 40px;
 }
+
+.cart-button{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    background-color: chocolate;
+    color: white;
+    bottom: 20px;
+    right: 20px;
+}
