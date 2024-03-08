@@ -1,7 +1,8 @@
 import axios from 'axios'
 // import cookie from "react-cookies";
+import { VALUES } from "./values"
 
-var hosturl = 'http://13.40.60.131:8081';
+var hosturl = VALUES.baseApiEndpoint;
 // var hosturl = 'http://localhost:8081';
 
 class Api{

@@ -8,6 +8,7 @@ type Item = {
     DateModified: string
     Description: string
     ItemId: number
+    ImagePath: string
     ItemName: string
     ItemPrice: ItemPrice
     ModifiedBy: number

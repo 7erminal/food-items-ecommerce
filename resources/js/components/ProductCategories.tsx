@@ -6,6 +6,7 @@ import AdItem from "./AdItem";
 import ProductCategoryItem from "./ProductCategoryItem";
 import { useWindowSize } from "@uidotdev/usehooks";
 import Api from "../utils/apis";
+import { VALUES } from "../utils/values"
 
 const ProductCategories: React.FC = () => {
     const size = useWindowSize();
@@ -68,7 +69,7 @@ const ProductCategories: React.FC = () => {
                                         categories.length > 0 ?
                                         categories.map((ct: Category, i: number)=>{
                                             return <SplideSlide key={i}>
-                                                    <ProductCategoryItem image={`http://localhost:8081${ct.ImagePath}`} />
+                                                    <ProductCategoryItem image={`${VALUES.baseApiEndpoint}${ct.ImagePath}`} />
                                                     {/* <img src="image1.jpg" alt="Image 1"/> */}
                                                 </SplideSlide>
                                         })

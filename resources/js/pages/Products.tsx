@@ -45,6 +45,34 @@ const ProductsPage: React.FC = () => {
         })
     }
 
+    const getItemDisplayImage = (itemId: string) => {
+        new Api().GET_('/v1/item-images/'+itemId).then(response=>{
+            console.log("Response received for images is ");
+            console.log(response);
+            if(response.status==200){
+                if(response.data.StatusCode == 200){
+                    if(response.data.ItemImages.length >= 1){
+                        return response.data.ItemImages[Math.floor(Math.random() * response.data.ItemImages.length)].ImagePath
+                    } else if (response.data.ItemImages.length == 1){
+                        return ""
+                    }
+                    
+                } else {
+                    console.log("ERROR");
+                }
+            } else {
+                console.log("ERROR");
+            }
+        }).catch(error => {
+            // setLoading(false)
+            console.log("Error returned is ... ")
+            console.log(error)
+            return ""
+        })
+
+        return ""
+    }
+
 
     return <div className="products-section">
         <ProductHeader />
@@ -56,8 +84,11 @@ const ProductsPage: React.FC = () => {
                     items != null || items != undefined ?
                         items.length > 0 ?
                         items.map((it: Item, i: number)=>{
+                            const imageurl = getItemDisplayImage(it.ItemId.toString())
+                            console.log("IMAGE URL RETURNED IS ")
+                            console.log(imageurl)
                             return <Col key={i} className="justify-content-center d-flex px-0 mt-4" xs={6} sm={6} md={3}>
-                                        <Item itemDetails={it} updateCart={updateCart} imageUrl="/assets/images/PHOTO-2023-11-23-12-04-55-2.jpg" />
+                                        <Item itemDetails={it} updateCart={updateCart} imageUrl={it.ImagePath} />
                                     </Col>
                         })
                         : ''

@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import { Button, Col, Form, Row } from "react-bootstrap";
 // import Api from './../resources/apis'
+import { VALUES } from "../utils/values";
 
 type Props = {
     imageUrl: string
@@ -21,7 +22,7 @@ const Item: React.FC<Props> = ({imageUrl, updateCart, itemDetails}) => {
             <input type="hidden" value={ itemDetails.ItemId } name="item_id" />
         <div style={{ width: '100%', height: '100%'}}>
             <div className="item-image">
-                <div className="item-image-i" style={{backgroundImage: `url('`+imageUrl+`')`, backgroundPosition: 'center', backgroundSize: 'cover'}}></div>
+                <div className="item-image-i" onClick={submitForm} style={{backgroundImage: `url('`+VALUES.baseApiEndpoint+imageUrl+`')`, backgroundPosition: 'center', backgroundSize: 'cover'}}></div>
             </div>
             <div className="item-content">
                 <Row>

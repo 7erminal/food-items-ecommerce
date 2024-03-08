@@ -7,6 +7,7 @@ import Item from "../components/Item";
 import CartButton from "../components/CartButton";
 import Functions from "../utils/functions";
 import CartHeader from "../components/CartHeader";
+import { VALUES } from "../utils/values";
 
 const CartPage: React.FC = () => {
     const [cartItemCount, setCartItemCount] = useState(0)
@@ -52,9 +53,13 @@ const CartPage: React.FC = () => {
                                 <ListGroup variant="flush">
                                     {
                                         items?.map((it: Item, i: number)=>{
+                                            console.log("Cart image path is ... "+VALUES.baseApiEndpoint+it.ImagePath)
                                             return <ListGroup.Item key={i}>
                                                     <Container>
                                                         <Row>
+                                                            <Col>
+                                                                <div className="cart-item-pic" style={{backgroundImage: `url('${VALUES.baseApiEndpoint}${it[0].ImagePath}')`, backgroundPosition: 'center', backgroundSize: 'cover'}}></div>
+                                                            </Col>
                                                             <Col>
                                                                 <h3>{ it[0].ItemName }</h3>
                                                             </Col>

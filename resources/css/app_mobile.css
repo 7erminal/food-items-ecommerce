@@ -358,3 +358,10 @@ body, html{
     width: 70px;
     height: auto;
 }
+
+.cart-item-pic{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+}
