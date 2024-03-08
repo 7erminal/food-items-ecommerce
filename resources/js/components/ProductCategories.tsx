@@ -8,7 +8,11 @@ import { useWindowSize } from "@uidotdev/usehooks";
 import Api from "../utils/apis";
 import { VALUES } from "../utils/values"
 
-const ProductCategories: React.FC = () => {
+type Props = {
+    toggleCategoryFilter: (cf: string)=>void
+}
+
+const ProductCategories: React.FC<Props> = ({toggleCategoryFilter}) => {
     const size = useWindowSize();
     const [categories, setCategories] = useState<Array<Category>>()
 
@@ -69,7 +73,7 @@ const ProductCategories: React.FC = () => {
                                         categories.length > 0 ?
                                         categories.map((ct: Category, i: number)=>{
                                             return <SplideSlide key={i}>
-                                                    <ProductCategoryItem image={`${VALUES.baseApiEndpoint}${ct.ImagePath}`} />
+                                                    <ProductCategoryItem name={ct.CategoryName} onClick={toggleCategoryFilter} image={`${VALUES.baseApiEndpoint}${ct.ImagePath}`} />
                                                     {/* <img src="image1.jpg" alt="Image 1"/> */}
                                                 </SplideSlide>
                                         })

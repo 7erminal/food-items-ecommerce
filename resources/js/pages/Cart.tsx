@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { createRoot } from 'react-dom/client'
 import Footer from "../components/footer";
 import ProductCategories from "../components/ProductCategories";
-import { Button, Card, CardBody, CardTitle, Col, Container, ListGroup, Row } from "react-bootstrap";
+import { Button, Card, CardBody, CardTitle, Col, Container, Form, ListGroup, Row } from "react-bootstrap";
 import Item from "../components/Item";
 import CartButton from "../components/CartButton";
 import Functions from "../utils/functions";
@@ -12,6 +12,9 @@ import { VALUES } from "../utils/values";
 const CartPage: React.FC = () => {
     const [cartItemCount, setCartItemCount] = useState(0)
     const [items, setItems] = useState<Array<any>>()
+    const [totalCost, setTotalCost] = useState(0)
+
+    let myRef = useRef<any>(null)
 
     useEffect(()=>{
         const x = new Functions().getNumberOfItems();
@@ -33,10 +36,22 @@ const CartPage: React.FC = () => {
             console.log("Items in cart are ")
             console.log(items_)
 
+            let tempTotalCost = totalCost;
+
+            items_?.map((it: Item, i: number)=>{
+                tempTotalCost = tempTotalCost + it[0].ItemPrice.ItemPrice
+            })
+
+            setTotalCost(tempTotalCost)
+
             setItems(items_)
         } else {
             setItems([])
         }
+    }
+
+    const submitForm = () =>{
+        myRef!.current.submit()
     }
 
 
@@ -58,7 +73,10 @@ const CartPage: React.FC = () => {
                                                     <Container>
                                                         <Row>
                                                             <Col>
-                                                                <div className="cart-item-pic" style={{backgroundImage: `url('${VALUES.baseApiEndpoint}${it[0].ImagePath}')`, backgroundPosition: 'center', backgroundSize: 'cover'}}></div>
+                                                                <Form ref={myRef} method="GET" action="/view-product" >
+                                                                    <div className="cart-item-pic" onClick={submitForm} style={{backgroundImage: `url('${VALUES.baseApiEndpoint}${it[0].ImagePath}')`, backgroundPosition: 'center', backgroundSize: 'cover'}}></div>
+                                                                    <input type="hidden" value={ it[0].ItemId } name="item_id" />
+                                                                </Form>
                                                             </Col>
                                                             <Col>
                                                                 <h3>{ it[0].ItemName }</h3>
@@ -80,6 +98,18 @@ const CartPage: React.FC = () => {
                                                 </ListGroup.Item>
                                         })
                                     }
+                                    <ListGroup.Item>
+                                        <Container> 
+                                            <Row>
+                                                <Col>
+                                                    <h5>Total</h5>
+                                                </Col>
+                                                <Col style={{ textAlign: 'right'}}>
+                                                    <h1>₵{ totalCost }</h1>
+                                                </Col>
+                                            </Row>
+                                        </Container>
+                                    </ListGroup.Item>
                                 </ListGroup>
                             </CardBody>
                         </Card>

@@ -5,27 +5,27 @@ const Footer: React.FC = () => {
     return <section className="footer-section">
         <Container>
             <Row>
-                <Col xs={12} sm={12} md={3}>
+                <Col>
                     <Stack gap={1}>
                         <div className="p-2"><b>Kori Products</b></div>
-                        <div className="p-2"><a href="#">All Products</a></div>
-                        <div className="p-2">Recipes</div>
+                        <div className="p-2"><a href="#" className="footer-link">All Products</a></div>
+                        <div className="p-2"><a href="#" className="footer-link">Recipes</a></div>
                     </Stack>
                 </Col>
-                <Col xs={12} sm={12} md={3}>
+                <Col>
                     <Stack gap={1}>
                         <div className="p-2"><b>Our Company</b></div>
-                        <div className="p-2"><a href="#">Who We Are</a></div>
-                        <div className="p-2">Sustainability</div>
+                        <div className="p-2"><a href="#" className="footer-link">Who We Are</a></div>
+                        <div className="p-2"><a href="#" className="footer-link">Sustainability</a></div>
                     </Stack>
                 </Col>
-                <Col xs={12} sm={12} md={3}>
+                <Col>
                     <Stack gap={1}>
                         <div className="p-2"><b>Get In Touch</b></div>
-                        <div className="p-2"><a href="#">Contact Us</a></div>
+                        <div className="p-2"><a href="#" className="footer-link">Contact Us</a></div>
                     </Stack>
                 </Col>
-                <Col xs={12} sm={12} md={3}>
+                <Col>
                 </Col>
             </Row>
             <hr/>

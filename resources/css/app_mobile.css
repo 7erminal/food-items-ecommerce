@@ -211,7 +211,23 @@ body, html{
     width: 100%;
     padding-top: 100px;
     padding-bottom: 120px;
-    background-color: #F2F3F4;
+    background-color: #2C3E50;
+    color: white;
+}
+
+.footer-link{
+    color: white;
+    text-decoration: none;
+}
+
+.footer-link:hover{
+    color: whitesmoke;
+    cursor: pointer;
+}
+
+.footer-link:visited{
+    text-decoration: none;
+    color: whitesmoke;
 }
 
 .products-section{
@@ -230,6 +246,13 @@ body, html{
     height: 110px;
     border-radius: 50%;
     border: 1px solid grey;
+    transition: 0.4s ease all;
+}
+
+.product-cat-item:hover{
+    cursor: pointer;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    transition: 0.4s ease all;
 }
 
 .product-categories-section{
@@ -364,4 +387,8 @@ body, html{
     height: 80px;
     border-radius: 50%;
     overflow: hidden;
+}
+
+.cart-item-pic:hover{
+    cursor: pointer;
 }

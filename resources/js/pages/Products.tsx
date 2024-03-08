@@ -12,6 +12,7 @@ import Api from "../utils/apis";
 const ProductsPage: React.FC = () => {
     const [cartItemCount, setCartItemCount] = useState(0)
     const [items, setItems] = useState<Array<Item>>()
+    const [categoryFilter, setCategoryFilter] = useState("all")
 
     useEffect(()=>{
         const x = new Functions().getNumberOfItems();
@@ -73,17 +74,21 @@ const ProductsPage: React.FC = () => {
         return ""
     }
 
+    const toggleCategoryFilter = (categoryName: string) =>{
+        setCategoryFilter(categoryName)
+    }
+
 
     return <div className="products-section">
         <ProductHeader />
-        <ProductCategories />
+        <ProductCategories toggleCategoryFilter={toggleCategoryFilter}/>
         <Container className="products-i">
             {/* <img src="/assets/images/PHOTO-2023-11-23-12-04-56.jpg" /> */}
             <Row className="no-gutters">
                 {
                     items != null || items != undefined ?
                         items.length > 0 ?
-                        items.map((it: Item, i: number)=>{
+                        items.filter((it: Item)=>it.Category.CategoryName==categoryFilter || categoryFilter == "all").map((it: Item, i: number)=>{
                             const imageurl = getItemDisplayImage(it.ItemId.toString())
                             console.log("IMAGE URL RETURNED IS ")
                             console.log(imageurl)

@@ -162,7 +162,7 @@
         width: 100%;
         background-color: #FFC300;
         color: #7B241C;
-        height: 120vh;
+        height: 1110px;
     }
     
     .marquee-tag{
@@ -213,7 +213,8 @@
         width: 100%;
         padding-top: 100px;
         padding-bottom: 120px;
-        background-color: #F2F3F4;
+        background-color: #2C3E50;
+        color: white;
     }
     
     .products-section{

@@ -1,12 +1,37 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
+import { Tweet } from "react-tweet";
 
 const Social: React.FC = () => {
     return <section className="social-section">
+        <Container className="my-4">
+            <Row className="my-2">
+                <Col>
+                    <h1 style={{color: "white"}}>Social</h1>
+                </Col>
+            </Row>
+        </Container>
         <Container fluid>
             <Row>
-                <Col>
-                    <blockquote className="twitter-tweet"><p lang="in" dir="ltr">“Wei ɛyɛ 200 cedis” <br/><br/>“Mɛma wo 8 cedis&quot; <br/><br/>“Hmm wodeɛ ɛnnyɛ hwee fa bra&quot; <a href="https://t.co/BYe2L6esZJ">https://t.co/BYe2L6esZJ</a></p>&mdash; Yaw (@theyawofosu) <a href="https://twitter.com/theyawofosu/status/1729435972226421163?ref_src=twsrc%5Etfw">November 28, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" data-charset="utf-8"></script>
+                <Col md={3} sm={6} xs={12}>
+                    <div data-theme="dark">
+                        <Tweet id="1765203202343915530" />
+                    </div>
+                </Col>
+                <Col md={3} sm={6} xs={12}>
+                    <div data-theme="dark">
+                        <Tweet id="1763248816718057846" />
+                    </div>
+                </Col>
+                <Col md={3} sm={6} xs={12}>
+                    <div data-theme="dark">
+                        <Tweet id="1763106772502605963" />
+                    </div>
+                </Col>
+                <Col md={3} sm={6} xs={12}>
+                    <div data-theme="dark">
+                        <Tweet id="1765772401357324465" />
+                    </div>
                 </Col>
             </Row>
         </Container>
