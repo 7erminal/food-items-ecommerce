@@ -7,7 +7,12 @@ const Footer: React.FC = () => {
             <Row>
                 <Col>
                     <Stack gap={1}>
-                        <div className="p-2"><b>Kori Products</b></div>
+                        <div className="p-2"><img src="/assets/images/makuFoodsLogo.png" className="footer-logo" /></div>
+                    </Stack>
+                </Col>
+                <Col>
+                    <Stack gap={1}>
+                        <div className="p-2"><b>Maku Foods Products</b></div>
                         <div className="p-2"><a href="#" className="footer-link">All Products</a></div>
                         <div className="p-2"><a href="#" className="footer-link">Recipes</a></div>
                     </Stack>

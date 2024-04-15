@@ -11,7 +11,7 @@ const Header: React.FC = () => {
                 <Col xs={{ order: 'last', span: 12 }} sm={{ order: 'last', span: 12 }} md={{ order: 'first', span: 6 }} style={{height: '100%'}}>
                     <Row className={size.width! < 481 ? "header-content" : "align-items-center header-content" } style={{height: '100%', textAlign: 'center', padding: '80px'}}>
                         <div>
-                            <h1 className="header-title-text">It has to be Kori</h1>
+                            <h1 className="header-title-text">It has to be Maku foods</h1>
                             <p className="header-body-text">
                                 Is it possible that you're too obsessed? Nah.
                             </p>      
@@ -24,7 +24,7 @@ const Header: React.FC = () => {
                 <Col xs={{ order: 'first', span: 12 }} sm={{ order: 'first', span: 12 }} md={{ order: 'last', span: 6 }} className="px-0">
                     <div className="video-div">
                         <video autoPlay height="100%" width="100%" className="header-video" controls>
-                            <source src="/assets/videos/Skype_Video.mp4" type="video/mp4" />
+                            <source src="/assets/videos/VIDEO-2024-04-15-14-00-00.mp4" type="video/mp4" />
                         </video>
                         {/* <div className="header-video-shadow"></div> */}
                     </div>

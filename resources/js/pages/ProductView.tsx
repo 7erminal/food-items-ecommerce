@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { createRoot } from 'react-dom/client'
-import Footer from "../components/footer";
+import Footer from "../components/Footer";
 import { Button, Carousel, Col, Container, Row } from "react-bootstrap";
 import Functions from './../utils/functions'
 import CartButton from "../components/CartButton";
@@ -110,7 +110,10 @@ const ProductViewPage: React.FC = () => {
     }
 
     const validateBeforeAddingToCart = (item: Item, number_: number, action: string) => {
+        console.log("Validating...")
+        console.log("Quantity being added is "+quantity+" and the total number of items is "+totalQuantity)
         if(quantity > totalQuantity){} else {
+            console.log("adding to cart")
             addToCart(item,number_,action)
         }
     }
@@ -120,7 +123,8 @@ const ProductViewPage: React.FC = () => {
         <Container className="item-details-i">
             {/* <img src="/assets/images/PHOTO-2023-11-23-12-04-56.jpg" /> */}
             <Row className="item-details-header">
-                <Col className="mx-auto" style={{ textAlign: 'center' }}><h4>Kori</h4></Col>
+                <Col xs={12} md={12} className="mx-auto" style={{ textAlign: 'center' }}><h6>Maku Foods</h6></Col>
+                <Col xs={12} md={12} className="mx-auto" style={{ textAlign: 'center' }}><h3><u>Just Like Home</u></h3></Col>
             </Row>
             <Row>
                 <Col className="justify-content-center mt-4" xs={12} sm={12} md={7}>

@@ -5,14 +5,14 @@
     }
 
     .custom-nav{
-        background-color: chocolate;
+        background-color: #D70205;
         color: white;
         position: relative;
     }
     
     .header-div{
         width: 100vw;
-        background-color: chocolate;
+        background-color: #D70205;
         height: 100vh;
         position: relative;
         color: white;
@@ -20,7 +20,7 @@
     
     .product-header-div{
         width: 100%;
-        background-color: chocolate;
+        background-color: #D70205;
         height: 650px;
         position: relative;
         color: white;
@@ -92,7 +92,7 @@
         padding-bottom: 1rem;
         padding-left: 1.75rem;
         padding-right: 1.75rem;
-        color: chocolate;
+        color: #D70205;
         border: none;
         font-size: 1.25rem;
         line-height: 1.75rem;
@@ -105,7 +105,7 @@
     
     .itemsAd-half-1{
         height: 350px;
-        background-color: chocolate;
+        background-color: #D70205;
     }
     
     .itemsAd-half-2{
@@ -154,7 +154,7 @@
     
     .bannerSection1{
         width: 100%;
-        background-color: chocolate;
+        background-color: #D70205;
         color: white;
     }
     
@@ -313,7 +313,7 @@
         width: 100px;
         height: 100px;
         position: fixed;
-        background-color: chocolate;
+        background-color: #D70205;
         color: white;
         bottom: 20px;
         right: 20px;

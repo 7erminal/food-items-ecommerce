@@ -3,14 +3,22 @@ body, html{
     overflow-x: hidden;
 }
 
+.logo{
+    width: 100px;
+}
+
+.footer-logo{
+    width: 130px;
+}
+
 .custom-nav{
-    background-color: chocolate;
+    background-color: #EB0E0E;
     color: white;
 }
 
 .header-div{
     width: 100vw;
-    background-color: chocolate;
+    background-color: #D70205;
     height: 100vh;
     position: relative;
     color: white;
@@ -18,7 +26,7 @@ body, html{
 
 .product-header-div{
     width: 100%;
-    background-color: chocolate;
+    background-color: #D70205;
     height: 750px;
     position: relative;
     color: white;
@@ -90,7 +98,7 @@ body, html{
     padding-bottom: 1rem;
     padding-left: 1.75rem;
     padding-right: 1.75rem;
-    color: chocolate;
+    color: #D70205;
     border: none;
     font-size: 1.25rem;
     line-height: 1.75rem;
@@ -103,7 +111,7 @@ body, html{
 
 .itemsAd-half-1{
     height: 350px;
-    background-color: chocolate;
+    background-color: #D70205;
 }
 
 .itemsAd-half-2{
@@ -152,7 +160,7 @@ body, html{
 
 .bannerSection1{
     width: 100%;
-    background-color: chocolate;
+    background-color: #D70205;
     color: white;
 }
 
@@ -333,7 +341,7 @@ body, html{
     width: 100px;
     height: 100px;
     position: fixed;
-    background-color: chocolate;
+    background-color: #D70205;
     color: white;
     bottom: 20px;
     right: 20px;

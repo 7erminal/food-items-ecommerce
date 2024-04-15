@@ -1,3 +1,4 @@
+console.log("Adding files ... ")
 import './bootstrap';
 
 import './pages/HomePage';
