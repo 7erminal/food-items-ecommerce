@@ -29,7 +29,7 @@ class Api{
             }
         }
 
-		let response = await axios.get(`${config}`)
+		let response = await axios.get(urlC, config)
 
         return response
        
