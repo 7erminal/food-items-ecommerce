@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { createRoot } from 'react-dom/client'
-import Footer from "../components/footer";
+import Footer from "../components/Footer";
 import ProductHeader from "../components/ProductHeader";
 import ProductCategories from "../components/ProductCategories";
 import { Col, Container, Row } from "react-bootstrap";
@@ -8,6 +8,9 @@ import Item from "../components/Item";
 import CartButton from "../components/CartButton";
 import Functions from "../utils/functions";
 import Api from "../utils/apis";
+import { VALUES } from "../utils/values"
+
+var hosturl = VALUES.itemsBaseApiEndpoint;
 
 const ProductsPage: React.FC = () => {
     const [cartItemCount, setCartItemCount] = useState(0)
@@ -27,7 +30,7 @@ const ProductsPage: React.FC = () => {
     }
 
     const getItems = ()=>{
-        new Api().GET_('/v1/items').then(response=>{
+        new Api().GET_(`${hosturl}/v1/items`).then(response=>{
             console.log("Response received is ");
             console.log(response);
             if(response.status==200){
@@ -47,7 +50,7 @@ const ProductsPage: React.FC = () => {
     }
 
     const getItemDisplayImage = (itemId: string) => {
-        new Api().GET_('/v1/item-images/'+itemId).then(response=>{
+        new Api().GET_(`${hosturl}/v1/item-images/`+itemId).then(response=>{
             console.log("Response received for images is ");
             console.log(response);
             if(response.status==200){

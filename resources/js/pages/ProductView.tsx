@@ -8,6 +8,8 @@ import Api from "../utils/apis";
 import { VALUES } from "../utils/values";
 import { BallTriangle } from "react-loader-spinner";
 
+var hosturl = VALUES.itemsBaseApiEndpoint;
+
 const ProductViewPage: React.FC = () => {
     const [quantity, setQuantity] = useState(1)
     const [totalQuantity, setTotalQuantity] = useState(0)
@@ -43,7 +45,7 @@ const ProductViewPage: React.FC = () => {
     const getItemDetails = () => {
         setLoading(true)
         console.log("About to go get item details ... /v1/items/"+itemId)
-        new Api().GET_('/v1/items/'+itemId).then(response=>{
+        new Api().GET_(`${hosturl}/v1/items/`+itemId).then(response=>{
             setLoading(false)
             console.log("Item details Response received is ");
             console.log(response);
@@ -64,7 +66,7 @@ const ProductViewPage: React.FC = () => {
     }
 
     const getItemImages = () => {
-        new Api().GET_('/v1/item-images/'+itemId).then(response=>{
+        new Api().GET_(`${hosturl}/v1/item-images/`+itemId).then(response=>{
             console.log("Response received for images is ");
             console.log(response);
             if(response.status==200){
@@ -90,7 +92,7 @@ const ProductViewPage: React.FC = () => {
 
     const getItemQuantity = () => {
         console.log("about to go get quantity with "+itemId)
-        new Api().GET_('/v1/items/quantity/'+itemId).then(response=>{
+        new Api().GET_(`${hosturl}/v1/items/quantity/`+itemId).then(response=>{
             console.log("Response received for Quantity is ");
             console.log(response);
             if(response.status==200){
@@ -132,7 +134,7 @@ const ProductViewPage: React.FC = () => {
                         {
                             itemImages?.map((im: string, i: number)=>{
                                 return <Carousel.Item key={i}>
-                                <img src={`${VALUES.baseApiEndpoint}${im}`} width="100%" />
+                                <img src={`${hosturl}${im}`} width="100%" />
                             </Carousel.Item>
                             })
                         }

@@ -5,7 +5,7 @@
     "src": "resources/css/app_desktop.css"
   },
   "resources/css/app_mobile.css": {
-    "file": "assets/app_mobile-a9061326.css",
+    "file": "assets/app_mobile-448416d9.css",
     "isEntry": true,
     "src": "resources/css/app_mobile.css"
   },
@@ -22,7 +22,7 @@
     "css": [
       "assets/app-b22a3387.css"
     ],
-    "file": "assets/app-d6176f2e.js",
+    "file": "assets/app-75dd3f3e.js",
     "isEntry": true,
     "src": "resources/js/app.jsx"
   }

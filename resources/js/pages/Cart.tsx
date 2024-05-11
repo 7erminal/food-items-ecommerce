@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import { createRoot } from 'react-dom/client'
-import Footer from "../components/footer";
+import Footer from "../components/Footer";
 import ProductCategories from "../components/ProductCategories";
 import { Button, Card, CardBody, CardTitle, Col, Container, Form, ListGroup, Row } from "react-bootstrap";
 import Item from "../components/Item";
@@ -9,10 +9,13 @@ import Functions from "../utils/functions";
 import CartHeader from "../components/CartHeader";
 import { VALUES } from "../utils/values";
 
+var hosturl = VALUES.itemsBaseApiEndpoint;
+
 const CartPage: React.FC = () => {
     const [cartItemCount, setCartItemCount] = useState(0)
     const [items, setItems] = useState<Array<any>>()
     const [totalCost, setTotalCost] = useState(0)
+    const [csrfToken, setCsrfToken] = useState('{{ echo csrf_token()}}')
 
     let myRef = useRef<any>(null)
 
@@ -30,13 +33,14 @@ const CartPage: React.FC = () => {
     }
 
     const setCartItems = ()=>{
+        // setTotalCost(0)
         if(sessionStorage.getItem("cart_et0i12")!=null){
             var items_ = JSON.parse(sessionStorage.getItem("cart_et0i12")!);
 
             console.log("Items in cart are ")
             console.log(items_)
 
-            let tempTotalCost = totalCost;
+            let tempTotalCost = 0;
 
             items_?.map((it: Item, i: number)=>{
                 tempTotalCost = tempTotalCost + it[0].ItemPrice.ItemPrice
@@ -68,14 +72,15 @@ const CartPage: React.FC = () => {
                                 <ListGroup variant="flush">
                                     {
                                         items?.map((it: Item, i: number)=>{
-                                            console.log("Cart image path is ... "+VALUES.baseApiEndpoint+it.ImagePath)
+                                            console.log("Cart image path is ... "+hosturl+it.ImagePath)
                                             return <ListGroup.Item key={i}>
                                                     <Container>
                                                         <Row>
                                                             <Col>
                                                                 <Form ref={myRef} method="GET" action="/view-product" >
-                                                                    <div className="cart-item-pic" onClick={submitForm} style={{backgroundImage: `url('${VALUES.baseApiEndpoint}${it[0].ImagePath}')`, backgroundPosition: 'center', backgroundSize: 'cover'}}></div>
+                                                                    <div className="cart-item-pic" onClick={submitForm} style={{backgroundImage: `url('${hosturl}${it[0].ImagePath}')`, backgroundPosition: 'center', backgroundSize: 'cover'}}></div>
                                                                     <input type="hidden" value={ it[0].ItemId } name="item_id" />
+                                                                    <input type="hidden" value={csrfToken} name="_token" />
                                                                 </Form>
                                                             </Col>
                                                             <Col>

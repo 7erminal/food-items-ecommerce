@@ -13,7 +13,7 @@ const ProductHeader: React.FC = () => {
                         <div>
                             <h1 className="header-title-text-2">FIND YOUR NEXT SPICE AND GET ₵1 OFF</h1>
                             <p className="header-body-text">
-                            We’ll give you ₵1 off any Kori condiment!
+                            We’ll give you ₵5 off any Kori condiment!
                             </p>      
                             <p className="mt-4">
                                 <Button className="header-button"><b>Learn More</b></Button>
@@ -22,8 +22,8 @@ const ProductHeader: React.FC = () => {
                     </Row>
                 </Col>
                 <Col xs={{ order: 'first', span: 12 }} sm={{ order: 'first', span: 12 }} md={{ order: 'last', span: 6 }} className="px-0">
-                    { size.width! < 481 ? <div className="video-div" style={{ backgroundImage: `url('/assets/images/PHOTO-2023-11-23-12-05-58.jpg')`, backgroundPosition: 'center', backgroundSize: 'center', height: '350px', width: '100%' }}></div> :
-                    <div className="video-div" style={{ backgroundImage: `url('/assets/images/PHOTO-2023-11-23-12-05-58.jpg')`, backgroundPosition: 'center', backgroundSize: 'center' }}></div>}
+                    { size.width! < 481 ? <div className="video-div" style={{ backgroundImage: `url('/assets/images/PHOTO-2024-04-26-17-17-08-2.jpg')`, backgroundPosition: 'center', backgroundSize: 'center', height: '350px', width: '100%' }}></div> :
+                    <div className="video-div" style={{ backgroundImage: `url('/assets/images/PHOTO-2024-04-26-17-17-08-2.jpg')`, backgroundPosition: 'center', backgroundSize: 'center' }}></div>}
                         
                         {/* <div className="header-video-shadow"></div> */}           
                 </Col>

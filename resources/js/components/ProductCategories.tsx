@@ -12,6 +12,8 @@ type Props = {
     toggleCategoryFilter: (cf: string)=>void
 }
 
+var hosturl = VALUES.itemsBaseApiEndpoint;
+
 const ProductCategories: React.FC<Props> = ({toggleCategoryFilter}) => {
     const size = useWindowSize();
     const [categories, setCategories] = useState<Array<Category>>()
@@ -21,7 +23,7 @@ const ProductCategories: React.FC<Props> = ({toggleCategoryFilter}) => {
     },[])
 
     const getCategories = ()=>{
-        new Api().GET_('/v1/categories').then(response=>{
+        new Api().GET_(`${hosturl}/v1/categories`).then(response=>{
             console.log("Response received is ");
             console.log(response);
             if(response.status==200){
@@ -72,8 +74,8 @@ const ProductCategories: React.FC<Props> = ({toggleCategoryFilter}) => {
                                         categories != null || categories != undefined ?
                                         categories.length > 0 ?
                                         categories.map((ct: Category, i: number)=>{
-                                            return <SplideSlide key={i}>
-                                                    <ProductCategoryItem name={ct.CategoryName} onClick={toggleCategoryFilter} image={`${VALUES.baseApiEndpoint}${ct.ImagePath}`} />
+                                            return <SplideSlide className="" key={i}>
+                                                    <ProductCategoryItem name={ct.CategoryName} onClick={toggleCategoryFilter} image={`${hosturl}${ct.ImagePath}`} />
                                                     {/* <img src="image1.jpg" alt="Image 1"/> */}
                                                 </SplideSlide>
                                         })

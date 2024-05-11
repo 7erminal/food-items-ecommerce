@@ -27,22 +27,22 @@ const ItemsAd: React.FC = () => {
                                     type: 'loop',
                                     autoplay: true
                                 } }
-                                aria-label="My Favorite Images"
+                                aria-label="Categories"
                                 >
-                                <SplideSlide>
-                                    <AdItem image="/assets/images/PHOTO-2023-11-23-12-04-54.jpg" />
+                                <SplideSlide className="">
+                                    <AdItem image="/assets/images/PHOTO-2024-04-26-17-17-08.jpg" />
                                     {/* <img src="image1.jpg" alt="Image 1"/> */}
                                 </SplideSlide>
-                                <SplideSlide>
-                                    <AdItem image="/assets/images/PHOTO-2023-11-23-12-05-58-2.jpg" />
+                                <SplideSlide className="">
+                                    <AdItem image="/assets/images/PHOTO-2024-04-26-17-17-08-5.jpg" />
                                     {/* <img src="image2.jpg" alt="Image 2"/> */}
                                 </SplideSlide>
-                                <SplideSlide>
-                                    <AdItem image="/assets/images/PHOTO-2023-11-23-12-05-58.jpg" />
+                                <SplideSlide className="">
+                                    <AdItem image="/assets/images/PHOTO-2024-04-26-17-17-08-4.jpg" />
                                     {/* <img src="image3.jpg" alt="Image 3"/> */}
                                 </SplideSlide>
-                                <SplideSlide>
-                                    <AdItem image="/assets/images/PHOTO-2023-11-23-12-05-59.jpg" />
+                                <SplideSlide className="">
+                                    <AdItem image="/assets/images/PHOTO-2024-04-26-17-17-06-4.jpg" />
                                     {/* <img src="image3.jpg" alt="Image 3"/> */}
                                 </SplideSlide>
                             </Splide>

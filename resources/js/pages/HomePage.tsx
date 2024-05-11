@@ -6,7 +6,7 @@ import NewsletterSignUp from "../components/NewsletterSignUp";
 import Banner1Section from "../components/Banner1Section";
 import Banner2Section from "../components/Banner2Section";
 import Social from "../components/Social";
-import Footer from "../components/footer";
+import Footer from "../components/Footer";
 import CartButton from "../components/CartButton";
 import Functions from "../utils/functions";
 

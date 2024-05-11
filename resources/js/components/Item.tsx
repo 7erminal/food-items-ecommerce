@@ -9,6 +9,8 @@ type Props = {
     itemDetails: Item
 }
 
+var hosturl = VALUES.itemsBaseApiEndpoint;
+
 const Item: React.FC<Props> = ({imageUrl, updateCart, itemDetails}) => {
     let myRef = useRef<any>(null)
     const [csrfToken, setCsrfToken] = useState('{{ echo csrf_token()}}')
@@ -22,23 +24,23 @@ const Item: React.FC<Props> = ({imageUrl, updateCart, itemDetails}) => {
             <input type="hidden" value={ itemDetails.ItemId } name="item_id" />
         <div style={{ width: '100%', height: '100%'}}>
             <div className="item-image">
-                <div className="item-image-i" onClick={submitForm} style={{backgroundImage: `url('`+VALUES.baseApiEndpoint+imageUrl+`')`, backgroundPosition: 'center', backgroundSize: 'cover'}}></div>
+                <div className="item-image-i" onClick={submitForm} style={{backgroundImage: `url('`+hosturl+imageUrl+`')`, backgroundPosition: 'center', backgroundSize: 'cover'}}></div>
             </div>
             <div className="item-content">
                 <Row>
-                    <Col>
+                    <Col xs={12} md={6} className="mt-1">
                         { itemDetails.ItemName }
                     </Col>
-                    <Col>
+                    <Col xs={12} md={6} className="mt-1">
                         {itemDetails.ItemPrice.Currency.Symbol}{itemDetails.ItemPrice.ItemPrice}
                     </Col>
                 </Row>
-                <Row className="mt-2">
-                    <Col>
-                        <Button type="button" variant="outline-success" onClick={()=>updateCart(itemDetails!,1,"add")}>Add to cart</Button>
+                <Row className="mt-1">
+                    <Col xs={12} md={6} className="mt-1">
+                        <Button type="button" style={{width: '100%'}} variant="outline-success" onClick={()=>updateCart(itemDetails!,1,"add")}>Add to cart</Button>
                     </Col>
-                    <Col>
-                        <Button variant="secondary" onClick={submitForm}>View Details</Button>
+                    <Col xs={12} md={6} className="mt-1">
+                        <Button variant="secondary" style={{width: '100%'}} onClick={submitForm}>View Details</Button>
                     </Col>
                 </Row>
             </div>

@@ -19,7 +19,7 @@ body, html{
 .header-div{
     width: 100vw;
     background-color: #D70205;
-    height: 100vh;
+    /* height: 100vh; */
     position: relative;
     color: white;
 }
@@ -33,7 +33,7 @@ body, html{
 }
 
 .product-header-content{
-    height: 100%;
+    /* height: 100%; */
     text-align: center;
     padding: 10px;
 }
@@ -250,8 +250,8 @@ body, html{
 }
 
 .product-cat-item{
-    width: 110px;
-    height: 110px;
+    width: 95px;
+    height: 95px;
     border-radius: 50%;
     border: 1px solid grey;
     transition: 0.4s ease all;
@@ -338,8 +338,8 @@ body, html{
 }
 
 .cart-button{
-    width: 100px;
-    height: 100px;
+    width: 70px;
+    height: 70px;
     position: fixed;
     background-color: #D70205;
     color: white;
