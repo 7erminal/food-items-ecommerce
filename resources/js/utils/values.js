@@ -1,7 +1,7 @@
 export const VALUES = {
     // GET CUSTOMER API
-    authenticationBaseApiEndpoint: `http://5.252.55.191:8000`,
-    itemsBaseApiEndpoint: `http://5.252.55.191:8002`,
-    customersBaseApiEndpoint: `http://5.252.55.191:8001`
+    authenticationBaseApiEndpoint: `https://vmi1862596.contaboserver.net:8000`,
+    itemsBaseApiEndpoint: `https://vmi1862596.contaboserver.net:8002`,
+    customersBaseApiEndpoint: `https://vmi1862596.contaboserver.net:8001`
     // baseApiEndpoint: `http://localhost:8082`
 }
