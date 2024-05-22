@@ -48,3 +48,51 @@ type Currency = {
     CurrencyId: number
     Symbol: string
 }
+
+type Purpose = {
+    PurposeId: number
+    Purpose: string
+    ImagePath: string
+    Visible: boolean
+    Description: string
+    Active: number
+    DateCreated: string
+    DateModified: string
+    CreatedBy: number
+    ModifiedBy: number
+}
+
+type ItemPurpose = {
+    ItemPurposeId: number
+    Item: Item
+    Purpose: Purpose
+    Active: number
+    DateCreated: string
+    DateModified: string
+    CreatedBy: number
+    ModifiedBy: number
+}
+
+type Feature = {
+    FeatureId: number
+    FeatureName: string
+    ImagePath: string
+    Visible: boolean
+    Description: string
+    Active: number
+    DateCreated: string
+    DateModified: string
+    CreatedBy: number
+    ModifiedBy: number
+}
+
+type ItemFeature = {
+    ItemFeatureId: number
+    Item: Item
+    Feature: Feature
+    Active: number
+    DateCreated: string
+    DateModified: string
+    CreatedBy: number
+    ModifiedBy: number
+}

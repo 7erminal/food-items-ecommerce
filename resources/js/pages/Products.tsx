@@ -9,6 +9,7 @@ import CartButton from "../components/CartButton";
 import Functions from "../utils/functions";
 import Api from "../utils/apis";
 import { VALUES } from "../utils/values"
+import Items from "../components/Items";
 
 var hosturl = VALUES.itemsBaseApiEndpoint;
 
@@ -87,22 +88,7 @@ const ProductsPage: React.FC = () => {
         <ProductCategories toggleCategoryFilter={toggleCategoryFilter}/>
         <Container className="products-i">
             {/* <img src="/assets/images/PHOTO-2023-11-23-12-04-56.jpg" /> */}
-            <Row className="no-gutters">
-                {
-                    items != null || items != undefined ?
-                        items.length > 0 ?
-                        items.filter((it: Item)=>it.Category.CategoryName==categoryFilter || categoryFilter == "all").map((it: Item, i: number)=>{
-                            const imageurl = getItemDisplayImage(it.ItemId.toString())
-                            console.log("IMAGE URL RETURNED IS ")
-                            console.log(imageurl)
-                            return <Col key={i} className="justify-content-center d-flex px-0 mt-4" xs={6} sm={6} md={3}>
-                                        <Item itemDetails={it} updateCart={updateCart} imageUrl={it.ImagePath} />
-                                    </Col>
-                        })
-                        : ''
-                    : ''
-                }
-            </Row>
+            <Items items={items} categoryFilter={categoryFilter} updateCart={updateCart} />
         </Container>
         <CartButton count_={cartItemCount} />
         <Footer />
