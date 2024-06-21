@@ -348,7 +348,7 @@ const CheckoutPage: React.FC = () => {
                                         </Col>
                                     </Row>
                                 </Container>
-                            </CardBody> : <RiseLoader color="#EB0E0E" />
+                            </CardBody> : <div style={{paddingTop: '100px', paddingBottom: '110px'}}><RiseLoader color="#EB0E0E" /></div>
                     }
                         </Card>
                     </div> 
