@@ -7,7 +7,7 @@
     <meta name="keywords" content="au theme template">
 
     <!-- Comment once backend is https -->
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+    <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" /> -->
 
     <!-- Title Page-->
     <title>e-Commerce</title>

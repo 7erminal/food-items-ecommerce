@@ -96,3 +96,27 @@ type ItemFeature = {
     CreatedBy: number
     ModifiedBy: number
 }
+
+type Order = {
+    Cost: number
+    CreatedBy: number
+    Currency: number
+    DateCreated: string
+    DateModified: string
+    ModifiedBy: number
+    OrderDate: string
+    OrderId: number
+    Quantity: number
+}
+
+type Transaction = {
+    Active: number
+    Amount: number
+    DateCreated: string
+    DateModified: string
+    ModifiedBy: number
+    CreatedBy: number
+    StatusId: number
+    TransactionCurrency: number
+    TransactionId: number
+}

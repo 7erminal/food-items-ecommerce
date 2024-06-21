@@ -35,3 +35,11 @@ Route::get('/view-product', function (Request $request) {
 Route::get('/cart', function () {
     return view('cart');
 });
+
+Route::get('/checkout', function () {
+    return view('checkout');
+});
+
+Route::get('/invoice', function () {
+    return view('invoice');
+});

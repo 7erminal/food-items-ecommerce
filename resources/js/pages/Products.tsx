@@ -13,6 +13,7 @@ import Items from "../components/Items";
 
 var hosturl = VALUES.itemsBaseApiEndpoint;
 
+
 const ProductsPage: React.FC = () => {
     const [cartItemCount, setCartItemCount] = useState(0)
     const [items, setItems] = useState<Array<Item>>()
@@ -22,6 +23,9 @@ const ProductsPage: React.FC = () => {
         const x = new Functions().getNumberOfItems();
         setCartItemCount(x);
         getItems();
+        const selCat = new Functions().getSelectedCategory()
+        console.log("Selected category is "+selCat)
+        selCat == "" ? setCategoryFilter("all") : setCategoryFilter(selCat)
     },[])
 
     const updateCart = (item: Item, number_: number, action: string) =>{
@@ -88,6 +92,11 @@ const ProductsPage: React.FC = () => {
         <ProductCategories toggleCategoryFilter={toggleCategoryFilter}/>
         <Container className="products-i">
             {/* <img src="/assets/images/PHOTO-2023-11-23-12-04-56.jpg" /> */}
+            <Row>
+                <Col>
+                    <h2>{categoryFilter.toUpperCase()}</h2>
+                </Col>
+            </Row>
             <Items items={items} categoryFilter={categoryFilter} updateCart={updateCart} />
         </Container>
         <CartButton count_={cartItemCount} />

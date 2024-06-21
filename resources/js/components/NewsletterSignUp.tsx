@@ -1,7 +1,53 @@
-import React from "react";
-import { Col, Container, Form, Row } from "react-bootstrap";
+import React, { useState } from "react";
+import { Button, Col, Container, Form, Row } from "react-bootstrap";
+import Api from "../utils/apis";
+import { VALUES } from "../utils/values"
+
+var hosturl = VALUES.customersBaseApiEndpoint;
 
 const NewsletterSignUp: React.FC = () => {
+    const [firstName, setFirstName] = useState('')
+    const [lastName, setLastName] = useState('')
+    const [email, setEmail] = useState('')
+    const [loading, setLoading] = useState(false)
+
+    const addToNewsLetter = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault()
+
+        const params = {
+            'FirstName': firstName,
+            'LastName': lastName,
+            'Email': email
+        }
+
+        setLoading(true)
+        new Api().POST_(params, `${hosturl}/v1/newsletter`).then(response=>{
+            setLoading(false)
+
+            console.log("Add to newsletter Response received is ");
+            console.log(response);
+            if(response.status==201){
+                if(response.data.StatusCode == 200){
+                    // I am using temp items 2 but for some reason I need to add the tempItems for it to behave right
+                    console.log("Response is ")
+                    console.log(response.data)
+                    setLastName('')
+                    setFirstName('')
+                    setEmail('')
+                    
+                } else {
+                    console.log("ERROR");
+                }
+            } else {
+                console.log("ERROR");
+            }
+        }).catch(error => {
+            setLoading(false)
+            console.log("Error returned is ... ")
+            console.log(error)
+        })
+    }
+
     return <section className="newsletter-section">
         <Container>
             <Row style={{textAlign: 'center'}}>
@@ -10,21 +56,22 @@ const NewsletterSignUp: React.FC = () => {
             <Row>
                 <Col xs={{ order: 'last', span: '12' }} sm={{ order: 'last', span: '12' }} md={{ order: 'first', span: '6' }}>
                     <Row className="mt-4">
-                        <Form className="mt-4">
+                        {
+                            loading == false ? <Form className="mt-4" onSubmit={(e: React.FormEvent<HTMLFormElement>)=>addToNewsLetter(e)}>
                             <Row className="my-4">
                                 <Col>
                                     <Form.Label><b>First Name</b></Form.Label>
-                                    <Form.Control size="lg" placeholder="First name" />
+                                    <Form.Control value={firstName} size="lg" placeholder="First name" onChange={(e: React.ChangeEvent<HTMLInputElement>)=>setFirstName(e.target.value)} />
                                 </Col>
                                 <Col>
                                     <Form.Label>Last Name</Form.Label>
-                                    <Form.Control size="lg" placeholder="Last name" />
+                                    <Form.Control size="lg" value={lastName} placeholder="Last name" onChange={(e: React.ChangeEvent<HTMLInputElement>)=>setLastName(e.target.value)} />
                                 </Col>
                             </Row>
                             <Row className="my-4">
                                 <Col>
                                     <Form.Label>Email address</Form.Label>
-                                    <Form.Control size="lg" placeholder="Email" />
+                                    <Form.Control size="lg" placeholder="Email" type="email" value={email} onChange={(e: React.ChangeEvent<HTMLInputElement>)=>setEmail(e.target.value)} required/>
                                 </Col>
                             </Row>
                             <Row className="my-2">
@@ -32,11 +79,17 @@ const NewsletterSignUp: React.FC = () => {
                                     <Form.Check // prettier-ignore
                                         type='checkbox'
                                         id={`default-checkbox`}
-                                        label="By entering your name, email address and submitting this form, you consent to receive marketing communication from Kraft Heinz at the email provided. You can unsubscribe at any time using the “unsubscribe” link at the bottom of the email. View our privacy policy(opens in a new window)."
+                                        label="By entering your name, email address and submitting this form, you consent to receive marketing communication from Maku Foods at the email provided. You can unsubscribe at any time using the “unsubscribe” link at the bottom of the email. View our privacy policy(opens in a new window)."
                                     />
                                 </Col>
                             </Row>
-                        </Form>
+                            <Row className="my-4">
+                                <Col>
+                                    <Button variant="danger" type="submit" size="lg">Submit</Button>
+                                </Col>
+                            </Row>
+                        </Form> : <Col style={{justifyContent: 'center', display: 'flex', alignItems: 'center'}}>ADDING CUSTOMER TO NEWSLETTER</Col>
+                        }
                     </Row>
                 </Col>
                 <Col className="my-auto" xs={{ order: 'first', span: '12' }} sm={{ order: 'first', span: '12' }} md={{ order: 'last', span: '6' }}>

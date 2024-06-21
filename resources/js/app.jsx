@@ -9,6 +9,10 @@ import './pages/ProductView';
 
 import './pages/Cart';
 
+import './pages/CheckoutPage';
+
+import './pages/Receipt';
+
 // import { createRoot } from 'react-dom/client';
 // import { createInertiaApp } from '@inertiajs/react';
 // import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';

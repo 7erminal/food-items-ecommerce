@@ -36,10 +36,10 @@ const Item: React.FC<Props> = ({imageUrl, updateCart, itemDetails}) => {
                     </Col>
                 </Row>
                 <Row className="mt-1">
-                    <Col xs={12} md={6} className="mt-1">
+                    <Col xs={12} sm={12} md={6} className="mt-1">
                         <Button type="button" style={{width: '100%'}} variant="outline-success" onClick={()=>updateCart(itemDetails!,1,"add")}>Add to cart</Button>
                     </Col>
-                    <Col xs={12} md={6} className="mt-1">
+                    <Col xs={12} sm={12} md={6} className="mt-1">
                         <Button variant="secondary" style={{width: '100%'}} onClick={submitForm}>View Details</Button>
                     </Col>
                 </Row>

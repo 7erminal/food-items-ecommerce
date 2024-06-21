@@ -68,6 +68,17 @@ class Functions {
 
         return count
     }
+
+    getSelectedCategory = ()=>{
+        var category = ""
+        if(sessionStorage.getItem("selectedCategory")!=null){
+            category = sessionStorage.getItem("selectedCategory")!;
+
+        
+        }
+
+        return category
+    }
 }
 
 export default Functions

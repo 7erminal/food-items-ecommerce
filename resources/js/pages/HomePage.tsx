@@ -23,13 +23,16 @@ const HomePage: React.FC = () => {
     const [itemPurposes, setItemPurposes] = useState<Array<Array<ItemPurpose>>>([])
     const [purposes, setPurposes] = useState<Array<Purpose>>()
     const [features, setFeatures] = useState<Array<Feature>>()
+    const [categories, setCategories] = useState<Array<Category>>()
     const [aChange, setAChange] = useState(0)
     const [bChange, setBChange] = useState(0)
 
 
     useEffect(()=>{
+        sessionStorage.setItem("selectedCategory", "all")
         const x = new Functions().getNumberOfItems();
         setCartItemCount(x);
+        getCategories();
         getPurposes();
         getFeatures();
     },[])
@@ -74,6 +77,26 @@ const HomePage: React.FC = () => {
         })
 
         // setBChange(!bChange)
+    }
+
+    const getCategories = ()=>{
+        new Api().GET_(`${hosturl}/v1/categories`).then(response=>{
+            console.log("Response received is ");
+            console.log(response);
+            if(response.status==200){
+                if(response.data.StatusCode == 200){
+                    setCategories(response.data.Categories);
+                } else {
+                    console.log("ERROR");
+                }
+            } else {
+                console.log("ERROR");
+            }
+        }).catch(error => {
+            // setLoading(false)
+            console.log("Error returned is ... ")
+            console.log(error)
+        })
     }
 
     const getItemPurposes = async (id: string)=>{
@@ -194,7 +217,7 @@ const HomePage: React.FC = () => {
 
     return <div style={{position: 'relative', width: '100%', height: '100%'}}>
         <Header />
-        <ItemsAd />
+        <ItemsAd categories={categories} />
         {
             (itemFeatures != undefined || itemFeatures != null) ?
                 itemFeatures.length > 0 ?
@@ -203,17 +226,18 @@ const HomePage: React.FC = () => {
                             <Col>
                                 <Row>
                                     <Col style={{justifyContent: 'center', display: 'flex'}}>
-                                        <h1>Features</h1>
+                                        { itemFeatures[0].length > 0 ? <h1>Features</h1> : '' }
                                     </Col>
                                 </Row>
                                 <Row>
                                     <Col xs={12} md={12}>
                                     {
                                         itemFeatures.map((itf: Array<ItemFeature>, i: number)=>{
-                                            // console.log("Each item feature is ")
-                                            // console.log(itf)
-                                            // console.log(itemFeatures)
-                                            return <ItemFeatures key={i} title={itf[0].Feature.FeatureName} items={itf} updateCart={updateCart} categoryFilter="all" />
+                                            console.log("Each item feature is ")
+                                            console.log(itf)
+                                            console.log(itemFeatures)
+                                            return itf.length > 0 ? <ItemFeatures key={i} title={itf[0].Feature.FeatureName} items={itf} updateCart={updateCart} categoryFilter="all" />
+                                            : ''
                                             // return <Row>GET OUT { i }</Row>
                                         })
                                     }
@@ -232,7 +256,7 @@ const HomePage: React.FC = () => {
                             <Col>
                                 <Row>
                                     <Col style={{justifyContent: 'center', display: 'flex'}}>
-                                        <h1>Purposes</h1>
+                                     { itemPurposes[0].length > 0 ? <h1>Purposes</h1> : '' }
                                     </Col>
                                 </Row>
                                 <Row>
@@ -241,7 +265,8 @@ const HomePage: React.FC = () => {
                                         itemPurposes.map((itp: Array<ItemPurpose>, i: number)=>{
                                             console.log("Each purpose is ")
                                             console.log(itemPurposes)
-                                            return <ItemPurposes key={i} title={itp[0].Purpose.Purpose} items={itp} updateCart={updateCart} categoryFilter="all" />
+                                            return itp.length > 0 ? <ItemPurposes key={i} title={itp[0].Purpose.Purpose} items={itp} updateCart={updateCart} categoryFilter="all" />
+                                            : ''
                                         })
                                     }
                                     </Col>

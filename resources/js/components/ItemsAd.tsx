@@ -4,8 +4,15 @@ import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 import { useWindowSize } from "@uidotdev/usehooks";
 import AdItem from "./AdItem";
+import { VALUES } from "../utils/values";
 
-const ItemsAd: React.FC = () => {
+var hosturl = VALUES.itemsBaseApiEndpoint;
+
+type Props = {
+    categories: Array<Category> | undefined
+}
+
+const ItemsAd: React.FC<Props> = ({categories}) => {
     const size = useWindowSize();
 
     return <section className="itemsAdSection">
@@ -29,22 +36,15 @@ const ItemsAd: React.FC = () => {
                                 } }
                                 aria-label="Categories"
                                 >
-                                <SplideSlide className="">
-                                    <AdItem image="/assets/images/PHOTO-2024-04-26-17-17-08.jpg" />
-                                    {/* <img src="image1.jpg" alt="Image 1"/> */}
-                                </SplideSlide>
-                                <SplideSlide className="">
-                                    <AdItem image="/assets/images/PHOTO-2024-04-26-17-17-08-5.jpg" />
-                                    {/* <img src="image2.jpg" alt="Image 2"/> */}
-                                </SplideSlide>
-                                <SplideSlide className="">
-                                    <AdItem image="/assets/images/PHOTO-2024-04-26-17-17-08-4.jpg" />
-                                    {/* <img src="image3.jpg" alt="Image 3"/> */}
-                                </SplideSlide>
-                                <SplideSlide className="">
-                                    <AdItem image="/assets/images/PHOTO-2024-04-26-17-17-06-4.jpg" />
-                                    {/* <img src="image3.jpg" alt="Image 3"/> */}
-                                </SplideSlide>
+                                    {
+                                        categories != undefined && categories.length > 0 ?
+                                        categories.map((cat: Category, i: number)=>{
+                                            return <SplideSlide key={i} className="">
+                                            <AdItem image={`${hosturl}${cat.ImagePath}`} name={cat.CategoryName} />
+                                            {/* <img src="image1.jpg" alt="Image 1"/> */}
+                                        </SplideSlide>
+                                        }) : ''
+                                    }
                             </Splide>
                         </Row>
                     </Container>

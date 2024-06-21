@@ -10,7 +10,7 @@
             <a class="nav-link active" style="color: white" aria-current="page" href="/"><b>Home</b></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" style="color: white" href="/products"><b>Products</b></a>
+            <a class="nav-link" id="prodcts" style="color: white" href="/products"><b>Products</b></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" style="color: white" href="/about-us"><b>Who We Are</b></a>
@@ -31,3 +31,9 @@
       </div>
     </div>
   </nav>
+  <script>
+    document.getElementById("prodcts").addEventListener('click', function(){
+      console.log("CLicked")
+      sessionStorage.setItem("selectedCategory", "all")
+    })
+  </script>

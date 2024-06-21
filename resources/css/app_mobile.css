@@ -137,6 +137,10 @@ body, html{
     box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
 }
 
+.itemAd-card:hover{
+    cursor: pointer;
+}
+
 .itemsAd-list{
     position: relative;
     bottom: 190px;
@@ -257,6 +261,10 @@ body, html{
     transition: 0.4s ease all;
 }
 
+.product-cat-item2:hover{
+    cursor: pointer;
+}
+
 .product-cat-item:hover{
     cursor: pointer;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -362,9 +370,9 @@ body, html{
 
 .cart-header-div{
     width: 100%;
-    background: #f46b45;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #eea849, #f46b45);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #eea849, #f46b45); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #D70205;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #e33a3d, #D70205);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #e33a3d, #D70205); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     height: 150px;
     position: relative;
     color: white;
@@ -399,4 +407,11 @@ body, html{
 
 .cart-item-pic:hover{
     cursor: pointer;
+}
+
+.category-name{
+    font-size: 24;
+    font-weight: 600;
+    color: #6D1705;
+    padding-top: 10px;
 }
