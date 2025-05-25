@@ -199,15 +199,43 @@ body, html{
     border: 2px solid #7B241C;
 }
 
-.outline-box h1{
+.outline-box h1, .outline-box h5, .outline-box h6{
     text-shadow: 0px 1px 2px #7B241C;
     color: #FFC300;
     font-size: 150px;
     -webkit-text-stroke: 1px #7B241C;
 }
 
+.outline-box h2{
+    text-shadow: 0px 1px 2px #7B241C;
+    color: #FFC300;
+    font-size: 100px;
+    -webkit-text-stroke: 1px #7B241C;
+}
+
+.outline-box h3{
+    text-shadow: 0px 1px 2px #7B241C;
+    color: #FFC300;
+    font-size: 70px;
+    -webkit-text-stroke: 1px #7B241C;
+}
+
+.outline-box h4{
+    text-shadow: 0px 1px 2px #7B241C;
+    color: #FFC300;
+    font-size: 50px;
+    -webkit-text-stroke: 1px #7B241C;
+}
+
+.outline-box h5{
+    text-shadow: 0px 1px 2px #7B241C;
+    color: #FFC300;
+    font-size: 30px;
+    -webkit-text-stroke: 1px #7B241C;
+}
+
 .large-bold-text{
-    font-size: 150px;
+    font-size: 50px;
     color: #7B241C;
 }
 
@@ -250,7 +278,7 @@ body, html{
 .products-i{
     padding-top: 80px;
     padding-bottom: 100px;
-    background-color: #fff;
+    background-color: #ffffff;
 }
 
 .product-cat-item{
@@ -414,4 +442,71 @@ body, html{
     font-weight: 600;
     color: #6D1705;
     padding-top: 10px;
+}
+
+.recipes-i{
+    padding-top: 80px;
+    padding-bottom: 100px;
+    background-color: #fff;
+    font-family: 'Monaco', 'Lucida Console';
+}
+
+.slanted {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 0;
+    width: 0;
+    border-left: 775px solid #dedede;
+    border-right: 250px solid transparent;
+    border-bottom: 750px solid #dedede;
+    z-index: 0;
+  }
+
+#container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    /* background:url(http://placehold.it/200x200); */
+}
+
+.roww, .coll{
+    z-index: 1;
+}
+
+.contact-info{
+    padding-top: 70px;
+    padding-bottom: 170px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: #EB0E0E;
+    color: white;
+    width: 89%;
+    margin-top: 150px;
+    margin-bottom: 70px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.contact-numbers a, .p-1 a, .p-2 a{
+    color: white;
+    text-decoration: none;
+}
+
+.mission-vision-boxes{
+    padding-top: 50px;
+}
+
+.mission-vision-box{
+    padding: 80px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 12px;
+    background-color: white;
 }

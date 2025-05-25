@@ -239,9 +239,9 @@ const CheckoutPage: React.FC = () => {
             {/* <img src="/assets/images/PHOTO-2023-11-23-12-04-56.jpg" /> */}
             <Row className="no-gutters justify-content-center">
                 <Col className="justify-content-center d-flex px-0 mt-4" xs={11} sm={11} md={10}>
-                    <div className="cart-items-card">
+                { loading== false ? <div className="cart-items-card">
                         <Card>
-                        { loading== false ? <CardBody>
+                         <CardBody>
                                 <CardTitle>Checkout</CardTitle>
                                 {
                                     showError == false ? '' :
@@ -300,12 +300,21 @@ const CheckoutPage: React.FC = () => {
                                                             <Form.Control type="text" placeholder="Name" required />
                                                             </Col>
                                                         </Form.Group>
+                                                        <Form.Group as={Row} className="mb-3" controlId="number">
+                                                            <Form.Label column sm="4">
+                                                            Number
+                                                            </Form.Label>
+                                                            <Col sm="8">
+                                                            <Form.Control type="text" placeholder="Contact Number" required />
+                                                            </Col>
+                                                        </Form.Group>
                                                         <Form.Group as={Row} className="mb-3" controlId="address">
                                                             <Form.Label column sm="4">
                                                             Address
                                                             </Form.Label>
                                                             <Col sm="8">
-                                                            <Form.Control type="text" placeholder="Address" required />
+                                                            <Form.Control type="text" placeholder="Delivery Address" required />
+                                                            <small><b>Delivery may attract a fee</b></small>
                                                             </Col>
                                                         </Form.Group>
                                                         <Form.Check // prettier-ignore
@@ -348,10 +357,10 @@ const CheckoutPage: React.FC = () => {
                                         </Col>
                                     </Row>
                                 </Container>
-                            </CardBody> : <div style={{paddingTop: '100px', paddingBottom: '110px'}}><RiseLoader color="#EB0E0E" /></div>
-                    }
+                            </CardBody> 
                         </Card>
-                    </div> 
+                    </div> : <div style={{paddingTop: '100px', paddingBottom: '110px'}}><RiseLoader color="#EB0E0E" /></div>
+                }
                 </Col>
             </Row>
             <Row className="no-gutters justify-content-center mb-4">

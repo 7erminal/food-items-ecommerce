@@ -206,7 +206,7 @@
     }
     
     .large-bold-text{
-        font-size: 150px;
+        font-size: 60px;
         color: #7B241C;
     }
     
@@ -368,5 +368,64 @@
         transform: translate(-50%, -50%);
         width: 320px;
         height: auto;
+    }
+
+    .slanted {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 0;
+        width: 0;
+        border-left: 775px solid #dedede;
+        border-right: 250px solid transparent;
+        border-bottom: 750px solid #dedede;
+        z-index: 0;
+      }
+    
+    #container {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        /* background:url(http://placehold.it/200x200); */
+    }
+    
+    .roww, .coll{
+        z-index: 1;
+    }
+    
+    .contact-info{
+        padding-top: 120px;
+        padding-bottom: 170px;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        background-color: #EB0E0E;
+        color: white;
+        width: 80%;
+        margin-top: 150px;
+        margin-bottom: 70px;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .contact-numbers a{
+        color: white;
+        text-decoration: none;
+    }
+    
+    .mission-vision-boxes{
+        padding-top: 130px;
+    }
+    
+    .mission-vision-box{
+        padding: 80px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 12px;
+        background-color: white;
     }
 }

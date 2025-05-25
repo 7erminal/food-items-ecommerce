@@ -43,3 +43,15 @@ Route::get('/checkout', function () {
 Route::get('/invoice', function () {
     return view('invoice');
 });
+
+Route::get('/about-us', function () {
+    return view('aboutUs');
+});
+
+Route::get('/sustainability', function () {
+    return view('sustainability');
+});
+
+Route::get('/recipes', function () {
+    return view('recipes');
+});

@@ -533,7 +533,7 @@ class Mockery
      *
      * @return string
      */
-    public static function formatArgs($method, array $arguments = null)
+    public static function formatArgs($method, ?array $arguments = null)
     {
         if (is_null($arguments)) {
             return $method . '()';
@@ -609,7 +609,7 @@ class Mockery
      *
      * @return string
      */
-    public static function formatObjects(array $objects = null)
+    public static function formatObjects(?array $objects = null)
     {
         static $formatting;
 

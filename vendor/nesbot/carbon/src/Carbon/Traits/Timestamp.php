@@ -26,7 +26,7 @@ trait Timestamp
      *
      * @return static
      */
-    public static function createFromTimestamp($timestamp, $tz = null)
+    public static function createFromTimestamp($timestamp, $tz = null): static
     {
         return static::createFromTimestampUTC($timestamp)->setTimezone($tz);
     }

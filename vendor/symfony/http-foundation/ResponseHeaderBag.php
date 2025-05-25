@@ -86,7 +86,7 @@ class ResponseHeaderBag extends HeaderBag
         }
     }
 
-    public function all(string $key = null): array
+    public function all(?string $key = null): array
     {
         $headers = parent::all();
 
@@ -236,7 +236,7 @@ class ResponseHeaderBag extends HeaderBag
      *
      * @return void
      */
-    public function clearCookie(string $name, ?string $path = '/', string $domain = null, bool $secure = false, bool $httpOnly = true, string $sameSite = null)
+    public function clearCookie(string $name, ?string $path = '/', ?string $domain = null, bool $secure = false, bool $httpOnly = true, ?string $sameSite = null)
     {
         $this->setCookie(new Cookie($name, null, 1, $path, $domain, $secure, $httpOnly, false, $sameSite));
     }

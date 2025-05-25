@@ -13,6 +13,12 @@ import './pages/CheckoutPage';
 
 import './pages/Receipt';
 
+import './pages/AboutUsPage';
+
+import './pages/Sustainability';
+
+import './pages/Recipes';
+
 // import { createRoot } from 'react-dom/client';
 // import { createInertiaApp } from '@inertiajs/react';
 // import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';

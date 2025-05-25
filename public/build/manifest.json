@@ -1,16 +1,16 @@
 {
   "resources/css/app_desktop.css": {
-    "file": "assets/app_desktop-8171559e.css",
+    "file": "assets/app_desktop-e2aaaa78.css",
     "isEntry": true,
     "src": "resources/css/app_desktop.css"
   },
   "resources/css/app_mobile.css": {
-    "file": "assets/app_mobile-2f88af96.css",
+    "file": "assets/app_mobile-7b2f2c0f.css",
     "isEntry": true,
     "src": "resources/css/app_mobile.css"
   },
   "resources/css/app_tablet.css": {
-    "file": "assets/app_tablet-9987f820.css",
+    "file": "assets/app_tablet-5971986d.css",
     "isEntry": true,
     "src": "resources/css/app_tablet.css"
   },
@@ -22,7 +22,7 @@
     "css": [
       "assets/app-b22a3387.css"
     ],
-    "file": "assets/app-346f43d7.js",
+    "file": "assets/app-2b5b27ff.js",
     "isEntry": true,
     "src": "resources/js/app.jsx"
   }
