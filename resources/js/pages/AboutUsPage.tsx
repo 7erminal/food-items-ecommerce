@@ -1,15 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { createRoot } from 'react-dom/client'
 import Footer from "../components/Footer";
-import ProductHeader from "../components/ProductHeader";
-import ProductCategories from "../components/ProductCategories";
 import { Col, Container, Row } from "react-bootstrap";
-import Item from "../components/Item";
 import CartButton from "../components/CartButton";
 import Functions from "../utils/functions";
 import Api from "../utils/apis";
 import { VALUES } from "../utils/values"
-import Items from "../components/Items";
 
 var hosturl = VALUES.itemsBaseApiEndpoint;
 
