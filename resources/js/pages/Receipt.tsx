@@ -80,7 +80,7 @@ const ReceiptPage: React.FC = () => {
                                 <ListGroup variant="flush">
                                     {
                                         items?.map((it: Item, i: number)=>{
-                                            console.log("Cart image path is ... "+hosturl+it.ImagePath)
+                                            // console.log("Cart image path is ... "+hosturl+it.ImagePath)
                                             // console.log("ITem is ")
                                             // console.log(it)
                                             return <ListGroup.Item key={i}>

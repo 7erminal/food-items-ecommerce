@@ -13,6 +13,7 @@ type Props = {
 }
 
 var hosturl = VALUES.itemsBaseApiEndpoint;
+var imageshosturl = VALUES.imagesBaseApiEndpoint;
 
 const ProductCategories: React.FC<Props> = ({toggleCategoryFilter}) => {
     const size = useWindowSize();
@@ -75,7 +76,7 @@ const ProductCategories: React.FC<Props> = ({toggleCategoryFilter}) => {
                                         categories.length > 0 ?
                                         categories.map((ct: Category, i: number)=>{
                                             return <SplideSlide className="" key={i}>
-                                                    <ProductCategoryItem name={ct.CategoryName} onClick={toggleCategoryFilter} image={`${hosturl}${ct.ImagePath}`} />
+                                                    <ProductCategoryItem name={ct.CategoryName} onClick={toggleCategoryFilter} image={`${imageshosturl}${ct.ImagePath}`} />
                                                     {/* <img src="image1.jpg" alt="Image 1"/> */}
                                                 </SplideSlide>
                                         })

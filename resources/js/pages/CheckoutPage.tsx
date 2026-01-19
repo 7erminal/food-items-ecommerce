@@ -9,7 +9,7 @@ import { VALUES } from "../utils/values";
 import Api from "../utils/apis";
 import RiseLoader from "react-spinners/RiseLoader";
 
-var hosturl = VALUES.itemsBaseApiEndpoint;
+var imageshosturl = VALUES.imagesBaseApiEndpoint;
 var transactionhosturl = VALUES.transactionBaseApiEndpoint;
 var paymenthosturl = VALUES.paymentBaseApiEndpoint;
 
@@ -250,7 +250,7 @@ const CheckoutPage: React.FC = () => {
                                 <ListGroup variant="flush">
                                     {
                                         items?.map((it: Item, i: number)=>{
-                                            console.log("Cart image path is ... "+hosturl+it.ImagePath)
+                                            console.log("Checkout image path is ... "+imageshosturl+it.ImagePath)
                                             // console.log("ITem is ")
                                             // console.log(it)
                                             return <ListGroup.Item key={i}>

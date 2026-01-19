@@ -9,7 +9,7 @@ type Props = {
     itemDetails: Item
 }
 
-var hosturl = VALUES.itemsBaseApiEndpoint;
+var imageshosturl = VALUES.imagesBaseApiEndpoint;
 
 const Item: React.FC<Props> = ({imageUrl, updateCart, itemDetails}) => {
     let myRef = useRef<any>(null)
@@ -24,7 +24,7 @@ const Item: React.FC<Props> = ({imageUrl, updateCart, itemDetails}) => {
             <input type="hidden" value={ itemDetails.ItemId } name="item_id" />
         <div style={{ width: '100%', height: '100%'}}>
             <div className="item-image">
-                <div className="item-image-i" onClick={submitForm} style={{backgroundImage: `url('`+hosturl+imageUrl+`')`, backgroundPosition: 'center', backgroundSize: 'cover'}}></div>
+                <div className="item-image-i" onClick={submitForm} style={{backgroundImage: `url('`+imageshosturl+imageUrl+`')`, backgroundPosition: 'center', backgroundSize: 'cover'}}></div>
             </div>
             <div className="item-content">
                 <Row>

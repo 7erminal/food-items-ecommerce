@@ -6,7 +6,7 @@ import { useWindowSize } from "@uidotdev/usehooks";
 import AdItem from "./AdItem";
 import { VALUES } from "../utils/values";
 
-var hosturl = VALUES.itemsBaseApiEndpoint;
+var imageshosturl = VALUES.imagesBaseApiEndpoint;
 
 type Props = {
     categories: Array<Category> | undefined
@@ -40,7 +40,7 @@ const ItemsAd: React.FC<Props> = ({categories}) => {
                                         categories != undefined && categories.length > 0 ?
                                         categories.map((cat: Category, i: number)=>{
                                             return <SplideSlide key={i} className="">
-                                            <AdItem image={`${hosturl}${cat.ImagePath}`} name={cat.CategoryName} />
+                                            <AdItem image={`${imageshosturl}${cat.ImagePath}`} name={cat.CategoryName} />
                                             {/* <img src="image1.jpg" alt="Image 1"/> */}
                                         </SplideSlide>
                                         }) : ''

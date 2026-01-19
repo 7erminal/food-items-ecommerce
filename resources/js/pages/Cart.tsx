@@ -9,7 +9,7 @@ import { VALUES } from "../utils/values";
 import Api from "../utils/apis";
 import RiseLoader from "react-spinners/RiseLoader";
 
-var hosturl = VALUES.itemsBaseApiEndpoint;
+var imageshosturl = VALUES.imagesBaseApiEndpoint;
 var transactionhosturl = VALUES.transactionBaseApiEndpoint;
 
 const CartPage: React.FC = () => {
@@ -160,7 +160,7 @@ const CartPage: React.FC = () => {
                                 <ListGroup variant="flush">
                                     {
                                         items?.map((it: Item, i: number)=>{
-                                            console.log("Cart image path is ... "+hosturl+it.ImagePath)
+                                            console.log("Cart image path is ... "+imageshosturl+it.ImagePath)
                                             // console.log("ITem is ")
                                             // console.log(it)
                                             return <ListGroup.Item key={i}>
@@ -170,7 +170,7 @@ const CartPage: React.FC = () => {
                                                                 <Row>
                                                                     <Col style={{ display: 'flex', justifyContent: 'center', flexDirection: 'row' }}>
                                                                         <Form ref={myRef} method="GET" action="/view-product" >
-                                                                            <div className="cart-item-pic" onClick={submitForm} style={{backgroundImage: `url('${hosturl}${it[0].ImagePath}')`, backgroundPosition: 'center', backgroundSize: 'cover'}}></div>
+                                                                            <div className="cart-item-pic" onClick={submitForm} style={{backgroundImage: `url('${imageshosturl}${it[0].ImagePath}')`, backgroundPosition: 'center', backgroundSize: 'cover'}}></div>
                                                                             <input type="hidden" value={ it[0].ItemId } name="item_id" />
                                                                             <input type="hidden" value={csrfToken} name="_token" />
                                                                         </Form>

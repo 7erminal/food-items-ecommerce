@@ -5,6 +5,7 @@ export const VALUES = {
     customersBaseApiEndpoint: `https://makufoodsltd.net/customers`,
     transactionBaseApiEndpoint: `https://makufoodsltd.net/transactions`,
     paymentBaseApiEndpoint: `https://makufoodsltd.net/payment`,
+    imagesBaseApiEndpoint: `https://images.makufoodsltd.net/images`,
     // itemsBaseApiEndpoint: `http://localhost:4082`,
     // customersBaseApiEndpoint: `http://localhost:4083`,
     // authenticationBaseApiEndpoint: `http://localhost:4080`,
