@@ -15,7 +15,7 @@ type Props = {
 const ItemsAd: React.FC<Props> = ({categories}) => {
     const size = useWindowSize();
 
-    return <section className="itemsAdSection">
+    return categories != undefined && categories.length > 0 ? <section className="itemsAdSection">
         <Container fluid>
             <Row>
                 <Col xs={12} md={12} className="itemsAd-half-1">
@@ -51,7 +51,7 @@ const ItemsAd: React.FC<Props> = ({categories}) => {
                 </Col>
             </Row>
         </Container>
-    </section>
+    </section> : <></>
 }
 
 export default ItemsAd
