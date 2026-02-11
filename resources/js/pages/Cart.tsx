@@ -49,7 +49,7 @@ const CartPage: React.FC = () => {
 
             let tempTotalCost = 0;
 
-            items_?.map((it: Item, i: number)=>{
+            items_?.map((it: any, i: number)=>{
                 tempTotalCost = tempTotalCost + (it[0].ItemPrice.ItemPrice * it[1])
             })
 
@@ -159,7 +159,7 @@ const CartPage: React.FC = () => {
                                 }
                                 <ListGroup variant="flush">
                                     {
-                                        items?.map((it: Item, i: number)=>{
+                                        items?.map((it: any, i: number)=>{
                                             console.log("Cart image path is ... "+imageshosturl+it.ImagePath)
                                             // console.log("ITem is ")
                                             // console.log(it)

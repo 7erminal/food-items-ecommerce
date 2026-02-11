@@ -9,6 +9,7 @@ import { VALUES } from "../utils/values";
 import { BallTriangle } from "react-loader-spinner";
 
 var hosturl = VALUES.itemsBaseApiEndpoint;
+var imageshosturl = VALUES.imagesBaseApiEndpoint;
 
 const ProductViewPage: React.FC = () => {
     const [quantity, setQuantity] = useState(1)
@@ -134,7 +135,7 @@ const ProductViewPage: React.FC = () => {
                         {
                             itemImages?.map((im: string, i: number)=>{
                                 return <Carousel.Item key={i}>
-                                <img src={`${hosturl}${im}`} width="100%" />
+                                <img src={`${imageshosturl}${im}`} width="100%" />
                             </Carousel.Item>
                             })
                         }
